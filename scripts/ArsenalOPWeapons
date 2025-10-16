@@ -1,0 +1,1 @@
+local a=game.ReplicatedStorage.Weapons;local b={Ammo=255,Auto=true,EquipTime=0,FireRate=0.001,Spread=0,StoredAmmo=255,ReloadTime=0}for a,a in pairs(a:GetChildren())do for b,c in pairs(b)do local a=a:FindFirstChild(b)if a then a.Value=c end end end
