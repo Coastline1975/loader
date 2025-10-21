@@ -1,0 +1,39 @@
+-- made by <@1032980333173407814> make sure you dont have any other tools equipped in hotbar
+local workspace = game:GetService("Workspace")
+local players = game:GetService("Players")
+
+local local_player = players.LocalPlayer
+
+_G.farm_delivery = true
+
+function sudo_apt_install_opsec_tp(position)
+    local_player.Character.PrimaryPart.Position = position
+end
+
+function get_tool()
+    return local_player.Character:FindFirstChildOfClass("Tool")
+end
+
+if (farm_delivery) then
+    repeat
+        local tool = get_tool()
+        if (tool) then
+            local house = tool:FindFirstChild("House")
+            if (house) then
+                sudo_apt_install_opsec_tp(house.Value.CurrentUpgrade.Value.GivePizza.Position)
+                wait(6)
+            end
+        end
+        local deliverable = workspace:FindFirstChildOfClass("Tool")
+        if (not deliverable) then
+            continue
+        end
+        if (not deliverable.Handle) then
+            continue
+        end
+        sudo_apt_install_opsec_tp(deliverable.Handle.Position)
+        wait(.25)
+        sudo_apt_install_opsec_tp(deliverable.Handle.Position + Vector3.new(0, 30, 0))
+        wait(1.75)
+    until (not farm_delivery)
+end
