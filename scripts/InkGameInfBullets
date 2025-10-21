@@ -1,0 +1,22 @@
+-- Ink game some skid code till i get detected
+
+local WorkspaceR = game:GetService("Workspace")
+local PlayersR = game:GetService("Players")
+
+local function infammo()
+    local Chara = PlayersR.LocalPlayer.Character
+    for _, v in pairs(Chara:GetChildren()) do
+        if v:IsA("Tool") and v:FindFirstChild("InfoClient") and v:FindFirstChild("Info") then
+            if v:FindFirstChild("InfoClient"):FindFirstChild("Bullets").Value ~= "inf" or v:FindFirstChild("Info"):FindFirstChild("Bullets").Value ~= "inf" then
+                v:FindFirstChild("InfoClient"):FindFirstChild("Bullets").Value = "inf"
+                v:FindFirstChild("Info"):FindFirstChild("Bullets").Value = "inf"
+            end
+        end
+    end
+end
+print("Inf Bullets for Ink Game - By TheBayHarbourSkidder")
+print("Inf Bullets activated! Use any weapon(shoot 1 time) to get Inf Bullets")
+while true do
+    wait(0.001)
+    infammo()
+end
